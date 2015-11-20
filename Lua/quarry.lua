@@ -2046,12 +2046,6 @@ function drop(side, final, compareDump)
       if slot[i][1] == 2 then --Intelligently refuels to fuel limit
         if doRefuel and not fuelSwitch then --Not in the conditional because we don't want to waitDrop excess fuel. Not a break so we can drop junk
           fuelSwitch = midRunRefuel(i)
-        else
-          waitDrop(i, allowedItems[i], dropFunc)
-        end
-        if fuelSwitch then
-          waitDrop(i, allowedItems[i], dropFunc)
-        end
       elseif not compareDump or (compareDump and slot[i][1] == 1) then --This stops all wanted items from being dropped off in a compareDump
         waitDrop(i, allowedItems[i], dropFunc)
       end
